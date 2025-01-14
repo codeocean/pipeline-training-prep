@@ -1,2 +1,6 @@
 metadata_version: 1
 name: Data Asset Creation for Pipeline Training
+description: Capsule to automatically create Data Assets used in the [RNA Seq Pipeline
+  Tutorial](https://docs.codeocean.com/user-guide/pipeline-guide/pipeline-tutorial).
+authors:
+- name: Jake Valsamis

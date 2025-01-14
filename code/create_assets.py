@@ -20,7 +20,7 @@ async def create_and_wait(client, data_asset_params):
     data_asset = await asyncio.to_thread(client.data_assets.create_data_asset, data_asset_params)
     print(f"Creating Data Asset: {data_asset_params}\n")
     data_asset = await asyncio.to_thread(client.data_assets.wait_until_ready, data_asset)
-    print(f"Data Asset -{data_asset.name}- creation complete\nID: {data_asset.id}\n")
+    print(f"Data Asset - {data_asset.name} - creation complete\nID: {data_asset.id}\n")
     return data_asset
 
 async def main(client, data_asset_params_list):
@@ -44,18 +44,18 @@ async def main(client, data_asset_params_list):
 if __name__ == "__main__":
 
     co_api_token = os.getenv("CUSTOM_KEY")
-    co_domain = "https://acmecorp-demo.codeocean.com" # replace with your Code Ocean domain
+    co_domain = "https://my-organization.codeocean.com" # replace with your Code Ocean domain
     client=CodeOcean(domain=co_domain,token=co_api_token)
 
     reads_data_asset_params = DataAssetParams(
         name="Pipeline Training: NGS Reads",
-        description="Paired and reads from GSE157194 patient 1",
+        description="Paired end reads from GSE157194 patient 1",
         mount="reads",
         tags=["fastq", "genomics", "SDK"],
         source=Source(
             aws=AWSS3Source(
                 bucket="codeocean-public-data",
-                prefix=f"example_datasets/single-cell-tutorial/pbmc3k/",
+                prefix=f"example_datasets/rna-seq-tutorial/GSE157194_reads/",
                 public=True,
                 keep_on_external_storage=False
                 )))
@@ -68,7 +68,7 @@ if __name__ == "__main__":
         source=Source(
             aws=AWSS3Source(
                 bucket="codeocean-public-data",
-                prefix=f"example_datasets/single-cell-tutorial/pbmc3k/",
+                prefix=f"example_datasets/GRCh38_GTF/",
                 public=True,
                 keep_on_external_storage=False
                 )))
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         source=Source(
             aws=AWSS3Source(
                 bucket="codeocean-public-data",
-                prefix=f"example_datasets/single-cell-tutorial/pbmc3k/",
+                prefix=f"example_datasets/STAR_GRCh38_GENCODE_Release_21_Index/star_index/",
                 public=True,
                 keep_on_external_storage=False
                 )))
