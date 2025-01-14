@@ -1,0 +1,6 @@
+environment_version: 1
+credentials:
+- type: general
+  id: o5d2fKevIP8PBLw8
+  description: 'Code Ocean API Token '
+  value: CUSTOM_KEY

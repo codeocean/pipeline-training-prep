@@ -1,0 +1,23 @@
+{
+	"version": 1,
+	"base_image": "codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04",
+	"args": [
+		"CUSTOM_KEY"
+	],
+	"options": {
+		"registry_host_arg": true,
+		"git_ask_pass": true
+	},
+	"installers": {
+		"pip": {
+			"packages": [
+				{
+					"name": "codeocean",
+					"version": "0.3.0"
+				}
+			],
+			"options": {},
+			"pre_install_options": {}
+		}
+	}
+}
